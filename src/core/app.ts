@@ -26,6 +26,14 @@ class App {
     this.httpHandler.post(path, handler);
   }
 
+  put(path: string, handler: RouteHandler) {
+    this.httpHandler.put(path, handler);
+  }
+
+  delete(path: string, handler: RouteHandler) {
+    this.httpHandler.delete(path, handler);
+  }
+
   listen(port: number, callback?: () => void) {
     const server = serve({
       port,
