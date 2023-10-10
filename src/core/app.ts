@@ -22,6 +22,10 @@ class App {
     this.httpHandler.get(path, handler);
   }
 
+  post(path: string, handler: RouteHandler) {
+    this.httpHandler.post(path, handler);
+  }
+
   listen(port: number, callback?: () => void) {
     const server = serve({
       port,
