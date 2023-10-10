@@ -1,0 +1,12 @@
+{
+  "name": "bunify",
+  "module": "index.ts",
+  "devDependencies": {
+    "bun-types": "latest",
+    "prettier": "^3.0.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module"
+}
