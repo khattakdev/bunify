@@ -1,6 +1,5 @@
 import { serve } from "bun";
 import HttpHandler from "./httpHandler";
-import Router from "./router";
 
 type RouteHandler = (
   req: Request,
