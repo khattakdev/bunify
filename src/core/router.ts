@@ -13,6 +13,5 @@ export function matchRoute(pattern: string, url: string): boolean {
   } else {
     regex = new RegExp(pattern);
   }
-  console.log(pattern, " ---- ", regex);
   return regex.test(url);
 }
