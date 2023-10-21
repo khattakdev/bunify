@@ -2,6 +2,7 @@ type RouteHandler = (
   req: Request,
   res: { send: (body: string) => Response },
 ) => Response;
+import { matchRoute } from "./router";
 class HttpHandler {
   // logic for handling HTTP request
   private getRoutes: { [path: string]: RouteHandler } = {};
@@ -31,16 +32,17 @@ class HttpHandler {
     req: Request,
   ): Response | null {
     const url = new URL(req.url);
-    const handler = routes[url.pathname];
-
-    if (handler && req.method == method) {
-      const res = {
-        send: (body: string) => new Response(body),
-      };
-      return handler(req, res);
+    for (const pattern in routes) {
+      if (matchRoute(pattern, url.pathname)) {
+        const handler = routes[pattern];
+        const res = {
+          send: (body: string) => new Response(body),
+        };
+        return handler(req, res);
+      }
     }
 
-    return null;
+    return new Response("Not Found", { status: 404 });
   }
   handleRequest(req: Request): Response {
     const response =
