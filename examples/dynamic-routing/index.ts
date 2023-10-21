@@ -16,7 +16,7 @@ app.get("ab*cd", (_, res) => {
 });
 
 app.get("/", (_, res) => {
-  return res.send("Home page");
+  return res.send("Dynamic Routing - Home Page");
 });
 
 app.listen(port, () => {
