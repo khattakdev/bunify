@@ -10,8 +10,9 @@ class HttpHandler {
   private deleteRoutes: { [path: string]: RouteHandler } = {};
   private putRoutes: { [path: string]: RouteHandler } = {};
 
-  get(path: string, handler: RouteHandler) {
-    this.getRoutes[path] = handler;
+  get(path: string | RegExp, handler: RouteHandler) {
+    const pathStr = path instanceof RegExp ? path.toString() : path;
+    this.getRoutes[pathStr] = handler;
   }
 
   post(path: string, handler: RouteHandler) {

@@ -17,7 +17,7 @@ class App {
     });
   }
 
-  get(path: string, handler: RouteHandler) {
+  get(path: string | RegExp, handler: RouteHandler) {
     this.httpHandler.get(path, handler);
   }
 
