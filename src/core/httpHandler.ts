@@ -15,16 +15,19 @@ class HttpHandler {
     this.getRoutes[pathStr] = handler;
   }
 
-  post(path: string, handler: RouteHandler) {
-    this.postRoutes[path] = handler;
+  post(path: string | RegExp, handler: RouteHandler) {
+    const pathStr = path instanceof RegExp ? path.toString() : path;
+    this.postRoutes[pathStr] = handler;
   }
 
-  put(path: string, handler: RouteHandler) {
-    this.putRoutes[path] = handler;
+  put(path: string | RegExp, handler: RouteHandler) {
+    const pathStr = path instanceof RegExp ? path.toString() : path;
+    this.putRoutes[pathStr] = handler;
   }
 
-  delete(path: string, handler: RouteHandler) {
-    this.deleteRoutes[path] = handler;
+  delete(path: string | RegExp, handler: RouteHandler) {
+    const pathStr = path instanceof RegExp ? path.toString() : path;
+    this.deleteRoutes[pathStr] = handler;
   }
 
   private handleMethod(

@@ -21,15 +21,15 @@ class App {
     this.httpHandler.get(path, handler);
   }
 
-  post(path: string, handler: RouteHandler) {
+  post(path: string | RegExp, handler: RouteHandler) {
     this.httpHandler.post(path, handler);
   }
 
-  put(path: string, handler: RouteHandler) {
+  put(path: string | RegExp, handler: RouteHandler) {
     this.httpHandler.put(path, handler);
   }
 
-  delete(path: string, handler: RouteHandler) {
+  delete(path: string | RegExp, handler: RouteHandler) {
     this.httpHandler.delete(path, handler);
   }
 
