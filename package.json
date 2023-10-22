@@ -1,7 +1,7 @@
 {
   "name": "bunify",
   "version": "0.1.0",
-  "module": "index.ts",
+  "module": "dist/index.js",
   "devDependencies": {
     "bun-types": "latest",
     "prettier": "^3.0.3"
@@ -9,5 +9,11 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "type": "module"
+  "scripts": {
+    "build": "tsc"
+  },
+  "type": "module",
+  "dependencies": {
+    "bun": "^1.0.7"
+  }
 }
