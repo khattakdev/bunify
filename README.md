@@ -24,6 +24,12 @@ cd bunify
 bun install
 ```
 
+To try the npm package, use the following command:
+
+```
+npm install bunify
+```
+
 ## Usage
 
 ```javascript
