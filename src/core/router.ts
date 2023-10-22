@@ -5,13 +5,15 @@ export function matchRoute(pattern: string, url: string): boolean {
     return false;
   }
 
-  let regex;
-
+  // TODO: Refactor the following
+  var regex, regexPattern;
   if (pattern.startsWith("/") && pattern.endsWith("/")) {
-    const regexPattern = pattern.slice(1, -1);
-    regex = new RegExp(regexPattern);
+    regexPattern = pattern.slice(1, -1);
   } else {
-    regex = new RegExp(pattern);
+    regexPattern = pattern;
   }
+
+  regexPattern = regexPattern.replace(/:\w+/g, "([^/]+)");
+  regex = new RegExp(regexPattern);
   return regex.test(url);
 }

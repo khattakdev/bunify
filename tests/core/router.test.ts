@@ -53,4 +53,9 @@ describe("RegEx", () => {
     const result = matchRoute("a(bc)?d", "/abcd");
     expect(result).toBe(true);
   });
+
+  test("/.*man$/should return true for superman", () => {
+    const result = matchRoute("/.*man$/", "/superman");
+    expect(result).toBe(true);
+  });
 });
