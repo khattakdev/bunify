@@ -1,5 +1,6 @@
 {
   "name": "bunify",
+  "version": "0.1.0",
   "module": "index.ts",
   "devDependencies": {
     "bun-types": "latest",
