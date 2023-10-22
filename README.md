@@ -1,6 +1,6 @@
 # Bunify
 
-Bunify is a simplistic routing framework for Bun.sh, designed to bring an Express.js-like experience to the Bun ecosystem.
+Bunify is a simplistic framework for Bun.sh, designed to bring an Express.js-like experience to the Bun ecosystem.
 
 ## Features
 
