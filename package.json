@@ -2,6 +2,10 @@
   "name": "bunify",
   "version": "0.1.0",
   "module": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khattakdev/bunify.git"
+  },
   "devDependencies": {
     "bun-types": "latest",
     "prettier": "^3.0.3"
