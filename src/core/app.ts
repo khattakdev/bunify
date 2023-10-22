@@ -1,4 +1,3 @@
-import { serve } from "bun";
 import HttpHandler from "./httpHandler";
 
 type RouteHandler = (
@@ -12,7 +11,7 @@ class App {
 
   constructor() {
     this.httpHandler = new HttpHandler();
-    this.server = serve({
+    this.server = Bun.serve({
       fetch: (req: Request) => this.httpHandler.handleRequest(req),
     });
   }
@@ -34,7 +33,7 @@ class App {
   }
 
   listen(port: number, callback?: () => void) {
-    const server = serve({
+    const server = Bun.serve({
       port,
       fetch: (req) => this.httpHandler.handleRequest(req),
       //   fetch: (req) => new Response("Welcome to bun"),
